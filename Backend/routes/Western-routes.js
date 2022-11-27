@@ -15,7 +15,6 @@ const product = require("../collects/Westernwear");
 //       title: req.body.title,
 //       subtitle: req.body.subtitle,
 //     });
-
 //     const saveData = await west.save();
 //     res.status(200).json(saveData)
 //   } catch (err) {
@@ -23,7 +22,7 @@ const product = require("../collects/Westernwear");
 //   }
 // });
 
-router.get("/", wescontroller.getAllWears );
+router.get("/western", wescontroller.getAllWears );
 router.post("/", wescontroller.postWear);
 router.get("/:id",wescontroller.getById);
 router.put("/:id",wescontroller.updateWear);

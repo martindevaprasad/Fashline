@@ -1,7 +1,9 @@
 const express = require("express");
 const { default: mongoose } = require("mongoose");
 
-const router = require("./routes/Western-routes")
+const router = require("./routes/Western-routes");
+
+const cors = require('cors')
 
 const app = express();
 
@@ -10,7 +12,7 @@ const app = express();
 
 //body-parser
 app.use(express.json())
-
+app.use(cors());
 app.use("/westernwears",router)
 
 

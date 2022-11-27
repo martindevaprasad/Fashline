@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+@font-face {
+  font-family: Imported;
+  src: url(../../fashstore/src/Fonts/Karatone.ttf);
+}
+
+.title{
+  font-family: Imported;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
