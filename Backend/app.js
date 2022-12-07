@@ -3,19 +3,17 @@ const { default: mongoose } = require("mongoose");
 
 const router = require("./routes/Western-routes");
 
-const cors = require('cors')
+const cors = require("cors");
+const userrouter = require("./routes/User-routes");
 
 const app = express();
 
 //middleware
-
-
+app.use(express.json());
+app.use("/api", userrouter);
 //body-parser
-app.use(express.json())
 app.use(cors());
-app.use("/westernwears",router)
-
-
+app.use("/westernwears", router);
 
 mongoose
   .connect(

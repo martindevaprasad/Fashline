@@ -25,7 +25,7 @@ const westernSchema = new Schema({
         type:Boolean,
        
     },
-    image:{
+    image:{ 
         type:String,
         required:true
     }
