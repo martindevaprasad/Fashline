@@ -14,6 +14,8 @@ import Grid from "@mui/material/Grid";
 import { styled, alpha } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,7 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export const Header = () => {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  const [value, setValue] = React.useState();
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };
@@ -79,7 +81,7 @@ export const Header = () => {
           position="static"
         >
           <Toolbar>
-            <Grid container spacing={2}>
+            <Grid container spacing={1}>
               {" "}
               <IconButton
                 LinkComponent={Link}
@@ -105,7 +107,6 @@ export const Header = () => {
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent"
                   }}
-                  component="h4"
                   variant="h5"
                   align="center"
                   className="title"
@@ -130,15 +131,14 @@ export const Header = () => {
                   Western Wears
                 </Button>
               </Grid>
-              <Search>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                  placeholder="Search…"
-                  inputProps={{ "aria-label": "search" }}
-                />
-              </Search>
+              <Box sx={{ marginLeft: "auto", borderColor: "divider" }}>
+                <Tabs  onChange={(e, val) => setValue(val)} value={value}  textColor="primary" indicatorColor="secondary">
+                  <Tab to='/login' LinkComponent={Link} label="Login" />
+
+                  <Tab to='/signup'  LinkComponent={Link} label="Signup" />
+                </Tabs>
+              </Box>
+             
             </Grid>
           </Toolbar>
         </AppBar>

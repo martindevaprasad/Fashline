@@ -2,13 +2,14 @@ const express = require("express");
 const { default: mongoose } = require("mongoose");
 
 const router = require("./routes/Western-routes");
-
+const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const userrouter = require("./routes/User-routes");
 
 const app = express();
 
 //middleware
+app.use(cookieParser());
 app.use(express.json());
 app.use("/api", userrouter);
 //body-parser
